@@ -1,0 +1,144 @@
+/* 
+ *  @author Evan Torgrimson
+ *  May 4, 2015 
+ *  PhotoSession.java 
+ *  This ConsoleProgram suggests photo-shoot times based on the amount of people in a group.
+ */
+
+import acm.program.ConsoleProgram;
+
+public class PhotoSession extends ConsoleProgram {
+
+	private static final long serialVersionUID = 1L;
+	
+	
+	// variable for size of group
+	public int amount_of_people = 0; 
+	
+	
+	public final void run() {
+
+		
+		// input amount of people attending
+		int amount_of_people = readInt("\nEnter the amount of people in your party: ");
+
+		// check to see if input is valid as well as what suggested should be
+		// suggested based on group size
+		if (amount_of_people <= 0) {
+			println("Error, you have entered an invalid number.  Please enter a number ranging from 1 to infinity");
+
+		} else if (amount_of_people >= 1 && amount_of_people <= 2) {
+			smallGroup();
+
+		} else if (amount_of_people >= 3 && amount_of_people <= 9) {
+			mediumGroup();
+
+		} else {
+			largeGroup();
+
+		}
+
+	} // end of run()
+	
+	
+
+	// Large group of people with suggested times and variables specific to this
+	// body
+	private void largeGroup() {
+
+		// input for day of the week
+		String weekDay = readLine("Enter your perfered weekday(no capital letter): ");
+
+		if (weekDay.equals("monday")) {
+			println("Your suggested time is: 10AM");
+
+		} else if (weekDay.equals("wednesday")) {
+			println("Your suggested time is: 10AM");
+
+		} else if (weekDay.equals("friday")) {
+			println("Your suggested time is: 10AM");
+
+		} else if (weekDay.equals("tuesday")) {
+			println("Your suggested time is: 9AM");
+
+		} else if (weekDay.equals("thursday")) {
+			println("Your suggested time is: 9AM");
+
+		} else if (weekDay.equals("saturday")) {
+			println("Monday through friday only");
+
+		} else if (weekDay.equals("sunday")) {
+			println("Monday through friday only");
+		}
+
+	} // end of largeGroup
+	
+	
+
+	// Medium group for 3-9 people with suggested times and variables specific
+	// to this body.
+	private void mediumGroup() {
+	
+		// input for day of the week
+		String weekDay = readLine("Enter your perfered weekday(no capital letter): ");
+
+		if (weekDay.equals("monday")) {
+			println("Your suggested time is: 3PM");
+
+		} else if (weekDay.equals("wednesday")) {
+			println("Your suggested time is: 3PM");
+
+		} else if (weekDay.equals("friday")) {
+			println("Your suggested time is: 3PM");
+
+		} else if (weekDay.equals("tuesday")) {
+			println("Your suggested time is: 11AM");
+
+		} else if (weekDay.equals("thursday")) {
+			println("Your suggested time is: 11AM");
+
+		} else if (weekDay.equals("saturday")) {
+			println("Monday through friday only");
+
+		} else if (weekDay.equals("sunday")) {
+			println("Monday through friday only");
+		}
+
+	} // end of mediumGroup()
+	
+	
+
+	// Small group of 1-2 people with suggested times and variables specific to
+	// this body
+	private void smallGroup() {
+
+		// input for day of the week
+		String weekDay = readLine("Enter your perfered weekday(no capital letter): ");
+
+		if (weekDay.equals("monday")) {
+			println("Your suggested time is: 9AM");
+
+		} else if (weekDay.equals("wednesday")) {
+			println("Your suggested time is: 9AM");
+
+		} else if (weekDay.equals("friday")) {
+			println("Your suggested time is: 9AM");
+
+		} else if (weekDay.equals("tuesday")) {
+			println("Your suggested time is: 2PM");
+
+		} else if (weekDay.equals("thursday")) {
+			println("Your suggested time is: 2PM");
+
+		} else if (weekDay.equals("saturday")) {
+			println("Monday through friday only");
+
+		} else if (weekDay.equals("sunday")) {
+			println("Monday through friday only");
+		}
+
+	} // end of smallGroup()
+	
+
+} // end of ConsoleProgram
+
